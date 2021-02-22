@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   width: 79rem;
@@ -11,6 +12,18 @@ export const Wrapper = styled.div`
   @media (max-width: 900px) {
     width: 90%;
     height: 15.5rem;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
   }
 `;
 

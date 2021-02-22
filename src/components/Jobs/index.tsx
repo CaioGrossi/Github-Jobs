@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import CardJob from '../CardJob';
-import { CardJobProps } from '../CardJob';
+import CardJob, { CardJobProps } from '../CardJob';
 import Pagination from '../Pagination';
 
 import * as S from './styles';
@@ -14,15 +13,13 @@ function Jobs({ jobs }: JobsProps) {
 
   const indexOfLastPost = currentPage * 5;
   const indexOfFirstPost = indexOfLastPost - 5;
-  const currentJobs = jobs.slice(indexOfFirstPost, indexOfLastPost);
+  const currentJobs = jobs?.slice(indexOfFirstPost, indexOfLastPost);
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
-  console.log(jobs);
-
   return (
     <S.Wrapper>
-      {currentJobs.map((job) => (
+      {currentJobs?.map((job) => (
         <CardJob
           key={job.id}
           title={job.title}
@@ -31,9 +28,14 @@ function Jobs({ jobs }: JobsProps) {
           created_at={job.created_at}
           company_logo={job.company_logo}
           type={job.type}
+          link={`/${job.id}`}
         />
       ))}
-      <Pagination jobsPerPage={5} totalJobs={jobs.length} paginate={paginate} />
+      <Pagination
+        jobsPerPage={5}
+        totalJobs={jobs?.length}
+        paginate={paginate}
+      />
     </S.Wrapper>
   );
 }

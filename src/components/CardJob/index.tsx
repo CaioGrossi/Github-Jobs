@@ -12,6 +12,7 @@ export type CardJobProps = {
   title: string;
   created_at: string;
   location: string;
+  link: string;
 };
 
 const CardJob = ({
@@ -20,9 +21,9 @@ const CardJob = ({
   type = '',
   title,
   created_at,
-  location
+  location,
+  link
 }: CardJobProps) => {
-  console.log(type);
   return (
     <S.Wrapper>
       <S.LogoWrapper>
@@ -34,10 +35,12 @@ const CardJob = ({
       </S.LogoWrapper>
 
       <S.Content>
-        <S.Header>
-          <h2>{company}</h2>
-          <h1>{title}</h1>
-        </S.Header>
+        <S.StyledLink to={link}>
+          <S.Header>
+            <h2>{company}</h2>
+            <h1>{title}</h1>
+          </S.Header>
+        </S.StyledLink>
 
         <S.Footer>
           {type == 'Full Time' && <S.FullTime>Full time</S.FullTime>}

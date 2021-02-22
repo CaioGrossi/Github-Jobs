@@ -1,10 +1,14 @@
 type PaginationProps = {
   jobsPerPage: number;
-  totalJobs: number;
+  totalJobs?: number;
   paginate: (pageNumber: number) => void;
 };
 
-const Pagination = ({ jobsPerPage, totalJobs, paginate }: PaginationProps) => {
+const Pagination = ({
+  jobsPerPage,
+  totalJobs = 0,
+  paginate
+}: PaginationProps) => {
   const pageNumbers = [];
 
   for (let i = 1; i < Math.ceil(totalJobs / jobsPerPage); i++) {
