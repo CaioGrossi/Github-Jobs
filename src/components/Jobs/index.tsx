@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import CardJob, { CardJobProps } from '../CardJob';
+import CardJob from '../CardJob';
 import Pagination from '../Pagination';
+import { Job } from '../../context/JobsContext';
 
 import * as S from './styles';
 
 type JobsProps = {
-  jobs: CardJobProps[];
+  jobs: Job[];
 };
 
 function Jobs({ jobs }: JobsProps) {

@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import getJobs from '../../services/api';
-import { CardJobProps } from '../../components/CardJob/index';
 import SearchBar from '../../components/SearchBar';
 import Jobs from '../../components/Jobs';
 import { Container } from '../../components/Container';
 import SideBar from '../../components/Sidebar';
+import { useJobsContext } from '../../context/JobsContext';
 
 import * as S from './styles';
 
 export const Landing = () => {
+  const { jobs, updateJobs } = useJobsContext();
   const [location, setLocation] = useState('');
   const [isFullTime, setIsFullTime] = useState(false);
-  const [jobs, setJobs] = useState<CardJobProps[]>([]);
 
   const handleSubmit = async (search: string) => {
     const data = await getJobs(search, location, isFullTime);
-    setJobs(data);
+    updateJobs(data);
   };
 
   const handleLocationChange = (location: string) => {
