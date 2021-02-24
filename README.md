@@ -21,3 +21,4 @@ para executar o projeto.
 * Manipulação de dados de API
 * Context API
 * Paginação
+* Typescript
