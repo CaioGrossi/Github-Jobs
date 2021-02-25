@@ -1,5 +1,6 @@
 import { BiWorld } from 'react-icons/bi';
 import { AiOutlineClockCircle } from 'react-icons/ai';
+import FullTime from '../FullTime';
 import formatDate from '../../utils/getdays';
 
 import * as S from './styles';
@@ -43,7 +44,7 @@ const CardJob = ({
         </S.StyledLink>
 
         <S.Footer>
-          {type == 'Full Time' && <S.FullTime>Full time</S.FullTime>}
+          {type == 'Full Time' && <FullTime />}
 
           <S.WrapperJobInfoFooter>
             <S.WrapperIconInfo>
