@@ -1,8 +1,9 @@
 const cardJobMock = {
   company: 'Amazon',
-  title: 'Software Engineer',
+  title: 'Software Engenieer',
+  created_at: '5 days ago',
   location: 'New York',
-  created_at: '5 days ago'
+  link: '3245f-343dfd-43534f'
 };
 
 export default cardJobMock;

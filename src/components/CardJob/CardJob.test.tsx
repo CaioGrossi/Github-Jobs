@@ -1,58 +1,68 @@
 import { screen, render } from '@testing-library/react';
+import { Router } from 'react-router-dom';
 import CardJob from '.';
+import { createMemoryHistory } from 'history';
 
 import cardJobMock from './mock';
 
 describe('<CardJob />', () => {
+  const history = createMemoryHistory();
+
   it('should render correctly', () => {
-    render(<CardJob {...cardJobMock} />);
+    render(
+      <Router history={history}>
+        <CardJob {...cardJobMock} />
+      </Router>
+    );
 
     expect(
       screen.getByRole('heading', { name: /amazon/i })
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole('heading', { name: /software engineer/i })
+      screen.getByRole('heading', { name: /software engenieer/i })
     ).toBeInTheDocument();
 
     expect(screen.getByText(/new york/i)).toBeInTheDocument();
-
-    expect(screen.getByText(/5 days ago/i)).toBeInTheDocument();
   });
 
   it('should render with company logo', () => {
-    render(<CardJob {...cardJobMock} company_logo="image/url" />);
+    render(
+      <Router history={history}>
+        <CardJob {...cardJobMock} company_logo="image/url" />
+      </Router>
+    );
 
     expect(
       screen.getByRole('heading', { name: /amazon/i })
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole('heading', { name: /software engineer/i })
+      screen.getByRole('heading', { name: /software engenieer/i })
     ).toBeInTheDocument();
 
     expect(screen.getByRole('img', { name: /amazon/i })).toBeInTheDocument();
 
     expect(screen.getByText(/new york/i)).toBeInTheDocument();
-
-    expect(screen.getByText(/5 days ago/i)).toBeInTheDocument();
   });
 
   it('should render with full time badge', () => {
-    render(<CardJob {...cardJobMock} fullTime />);
+    render(
+      <Router history={history}>
+        <CardJob {...cardJobMock} type="Full Time" />
+      </Router>
+    );
 
     expect(
       screen.getByRole('heading', { name: /amazon/i })
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole('heading', { name: /software engineer/i })
+      screen.getByRole('heading', { name: /software engenieer/i })
     ).toBeInTheDocument();
 
     expect(screen.getByText(/new york/i)).toBeInTheDocument();
 
     expect(screen.getByText(/full time/i)).toBeInTheDocument();
-
-    expect(screen.getByText(/5 days ago/i)).toBeInTheDocument();
   });
 });
