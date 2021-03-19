@@ -26,3 +26,4 @@ para executar o projeto.
 * Context API
 * Paginação
 * Typescript
+* Testes unitários com React Testing Library e Jest
