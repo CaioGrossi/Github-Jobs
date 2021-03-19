@@ -14,6 +14,7 @@ const Pagination = ({
   for (let i = 1; i < Math.ceil(totalJobs / jobsPerPage); i++) {
     pageNumbers.push(i);
   }
+
   return (
     <nav>
       <ul className="pagination">
