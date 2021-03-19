@@ -11,7 +11,7 @@ const Pagination = ({
 }: PaginationProps) => {
   const pageNumbers = [];
 
-  for (let i = 1; i < Math.ceil(totalJobs / jobsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalJobs / jobsPerPage); i++) {
     pageNumbers.push(i);
   }
 

@@ -6,7 +6,7 @@ describe('<Pagination />', () => {
   it('should render correctly the number of pages', () => {
     render(<Pagination jobsPerPage={5} totalJobs={40} paginate={jest.fn()} />);
 
-    expect(screen.getAllByRole('link')).toHaveLength(7);
+    expect(screen.getAllByRole('link')).toHaveLength(8);
   });
 
   it('should call paginate funcion when some page is clicked', () => {
