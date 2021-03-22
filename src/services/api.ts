@@ -6,13 +6,16 @@ const getJobs = async (
   full_time: boolean
 ) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const response: any = await axios.get('http://localhost:4000/', {
-    params: {
-      description: description,
-      location: location,
-      full_time: full_time
+  const response: any = await axios.get(
+    'https://jobs-github-api.herokuapp.com/',
+    {
+      params: {
+        description: description,
+        location: location,
+        full_time: full_time
+      }
     }
-  });
+  );
 
   return response.data;
 };
