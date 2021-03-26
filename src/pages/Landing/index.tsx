@@ -12,10 +12,13 @@ export const Landing = () => {
   const { jobs, updateJobs } = useJobsContext();
   const [location, setLocation] = useState('');
   const [isFullTime, setIsFullTime] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (search: string) => {
+    setIsLoading(true);
     const data = await getJobs(search, location, isFullTime);
     updateJobs(data);
+    setIsLoading(false);
   };
 
   const handleLocationChange = (location: string) => {
@@ -37,7 +40,7 @@ export const Landing = () => {
           changeFullTime={handleIsFullTimeChange}
           changeLocation={handleLocationChange}
         />
-        <Jobs jobs={jobs} />
+        <Jobs jobs={jobs} isLoading={isLoading} />
       </S.Wrapper>
     </Container>
   );
