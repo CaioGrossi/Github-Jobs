@@ -12,7 +12,7 @@ describe('<Jobs />', () => {
 
     render(
       <Router history={history}>
-        <Jobs jobs={jobsMock} />
+        <Jobs isLoading={false} jobs={jobsMock} />
       </Router>
     );
 
@@ -23,5 +23,18 @@ describe('<Jobs />', () => {
 
     const cardJobsSecondPage = screen.getAllByText(/front end developer/i);
     expect(cardJobsSecondPage).toHaveLength(2);
+  });
+  it('should render the loading image', () => {
+    const history = createMemoryHistory();
+
+    render(
+      <Router history={history}>
+        <Jobs isLoading={true} jobs={jobsMock} />
+      </Router>
+    );
+
+    expect(
+      screen.getByRole('img', { name: /loading.../i })
+    ).toBeInTheDocument();
   });
 });
