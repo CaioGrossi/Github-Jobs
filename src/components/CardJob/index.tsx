@@ -6,7 +6,6 @@ import formatDate from '../../utils/getdays';
 import * as S from './styles';
 
 export type CardJobProps = {
-  id?: string;
   company_logo?: string;
   company: string;
   type?: string;

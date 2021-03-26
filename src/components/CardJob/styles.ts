@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   width: 79rem;
-  height: 14rem;
+  min-height: 14rem;
   padding: 1.2rem;
   display: flex;
   border-radius: 0.4rem;
@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 900px) {
     width: 90%;
-    height: 15.5rem;
+    min-height: 15.5rem;
   }
 `;
 

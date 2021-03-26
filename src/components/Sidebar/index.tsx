@@ -10,10 +10,10 @@ type SideBarProps = {
 
 const Sidebar = ({ changeLocation, changeFullTime }: SideBarProps) => {
   const [locations, setLocations] = useState<string[]>([
+    'Unspecified',
     'New York',
     'Amsterdam',
-    'London',
-    'None'
+    'London'
   ]);
 
   const [newLocation, setNewLocation] = useState<string>('');

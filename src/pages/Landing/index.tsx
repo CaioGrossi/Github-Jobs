@@ -17,6 +17,7 @@ export const Landing = () => {
   const handleSubmit = async (search: string) => {
     setIsLoading(true);
     const data = await getJobs(search, location, isFullTime);
+    console.log(search, location, isFullTime);
     updateJobs(data);
     setIsLoading(false);
   };
