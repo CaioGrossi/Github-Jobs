@@ -19,8 +19,8 @@ const Sidebar = ({ changeLocation, changeFullTime }: SideBarProps) => {
 
   const handleAddNewLocation = () => {
     if (newLocation.length != 0) {
-       setLocations((prev) => [...prev, newLocation]);
-       setNewLocation(''); 
+      setLocations((prev) => [...prev, newLocation]);
+      setNewLocation('');
     }
   };
 
