@@ -12,7 +12,8 @@ const Sidebar = ({ changeLocation, changeFullTime }: SideBarProps) => {
   const [locations, setLocations] = useState<string[]>([
     'New York',
     'Amsterdam',
-    'London'
+    'London',
+    'None'
   ]);
 
   const [newLocation, setNewLocation] = useState<string>('');
@@ -56,6 +57,7 @@ const Sidebar = ({ changeLocation, changeFullTime }: SideBarProps) => {
               name="location"
               id={formatedLocation}
               value={formatedLocation}
+              defaultChecked={formatedLocation === ''}
               onChange={(event) => changeLocation(event.target.value)}
             />
             <label htmlFor={formatedLocation}>{location}</label>

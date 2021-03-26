@@ -1,3 +1,7 @@
 export default function formatLocation(location: string) {
-  return location.replace(' ', '-').toLocaleLowerCase();
+  if (location != 'None') {
+    return location.replace(' ', '-').toLocaleLowerCase();
+  }
+
+  return '';
 }
