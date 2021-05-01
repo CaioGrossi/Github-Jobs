@@ -7,7 +7,7 @@ Aplicação feita para mostrar vagas de emprego disponíveis na [API do github j
 
 
 ## Pré-requisitos
-Ter uma versão atualizada do NodeJS instalada em sua maquina e um gerenciador de pacotes (yarn ou npm).
+Ter uma versão atualizada do NodeJS instalada em sua máquina e um gerenciador de pacotes (yarn ou npm).
 
 ## Como executar
 Vá até a paste do projeto e digite:
