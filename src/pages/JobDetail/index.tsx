@@ -58,7 +58,10 @@ const JobDetail = () => {
 
         <S.HowApply>
           <h4>HOW TO APPLY</h4>
-          <div style={{wordBreak: "break-word"}} dangerouslySetInnerHTML={{ __html: job.how_to_apply }}></div>
+          <div
+            style={{ wordBreak: 'break-word' }}
+            dangerouslySetInnerHTML={{ __html: job.how_to_apply }}
+          ></div>
         </S.HowApply>
 
         <S.MainContent>
