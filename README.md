@@ -1,5 +1,5 @@
 # Github Jobs
-Aplicação feita para mostrar vagas de emprego disponíveis na [API do github jobs](https://jobs.github.com/api). É possivel filtrar as vagas por nome do emprego, benefícios, localização e trabalho full-time. Os trabalhos são mostrados em forma de cards com opção de clicar e ver mais detalhes sobre a vaga de trabalho.No projeto foi explorado grande parte das funcionalidades do React como criação de contextos, componentização. Foi explorado também consumo de API's externas e utilização de tipagem com o Typescript.
+Aplicação feita para mostrar vagas de emprego disponíveis na [API do github jobs](https://jobs.github.com/api). É possivel filtrar as vagas por nome do emprego, benefícios, localização e trabalho full-time. Os trabalhos são mostrados em forma de cards com opção de clicar e ver mais detalhes sobre a vaga de trabalho.No projeto foi explorado grande parte das funcionalidades do React como criação de contextos, componentização. Foi explorado também consumo de API's externas e utilização de tipagem com o Typescript. Link para projeto em produção: https://github-jobs-five-vert.vercel.app/
 
 <p align="center">
   <img src="/demo/github-jobs.gif" />
